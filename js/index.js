@@ -15,7 +15,7 @@ function getGrade(score) {
   //if (score < 49) { 1 }
 }
 
-function isValid() {
+function validate() {
   return true;
 }
 
@@ -28,23 +28,15 @@ function calculateClicked() {
   const earnedPoints = getEarnedPoints();
   const maxPoints = getMaxPoints();
 
-  const isValid = isValid();
+  const isValid = validate();
 
   if (isValid) {
     const score = calculate(earnedPoints, maxPoints);
     const grade = getGrade(score);
+    renderResult(score, grade);
   } else {
     //renderError();
   }
-
-
-  renderResult(score, grade);
 }
 
 document.getElementById('buttonCalc').onclick = calculateClicked;
-
-//getEarnedPoints
-//getMaxPoints
-//const score = calculate(earnedPoints, maxPoints);
-//const grade = getGrade(score);
-
